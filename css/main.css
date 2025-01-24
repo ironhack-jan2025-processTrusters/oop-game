@@ -1,5 +1,16 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
 #board {
-    width: 90vw;
-    height: 90vh;
-    background-color: cadetblue;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(194, 147, 232);
+    position: relative;
+}
+
+#player {
+    background-color: greenyellow;
+    position: absolute;
 }
