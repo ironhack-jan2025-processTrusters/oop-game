@@ -70,10 +70,25 @@ setInterval(() => {
     obstaclesArr.push(newObstacle);
 }, 3000);
 
-// move obstacles
+// update obstacles
 setInterval(() => {
     obstaclesArr.forEach((obstacleInstance, i, arr) => {
+
+        // move
         obstacleInstance.moveDown();
+
+        // detect collision
+        if (
+            player.positionX < obstacleInstance.positionX + obstacleInstance.width &&
+            player.positionX + player.width > obstacleInstance.positionX &&
+            player.positionY < obstacleInstance.positionY + obstacleInstance.height &&
+            player.positionY + player.height > obstacleInstance.positionY
+        ) {
+            // Collision detected!
+            console.log("game over...");
+            location.href = "gameover.html";
+
+        }
     });
 }, 30);
 
