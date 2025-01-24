@@ -17,12 +17,16 @@ class Player {
         this.playerElm.style.bottom = this.positionY + "vh";
     }
     moveLeft() {
-        this.positionX--;
-        this.updateUI();
+        if(this.positionX > 0) {
+            this.positionX--;
+            this.updateUI();
+        }
     }
     moveRight() {
-        this.positionX++;
-        this.updateUI();
+        if(this.positionX < 100 - this.width){
+            this.positionX++;
+            this.updateUI();
+        }
     }
 }
 
@@ -87,7 +91,6 @@ setInterval(() => {
             // Collision detected!
             console.log("game over...");
             location.href = "gameover.html";
-
         }
     });
 }, 30);
